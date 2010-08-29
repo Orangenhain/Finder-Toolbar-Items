@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta name="Format" content="complete" />
+	</head>
+<body>
+<h1 id="openterminalhere">Open Terminal Here</h1>
+
+<p>AppleScript application which opens a Terminal at the location of the front-most Finder window</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>The application is well suited to be placed in the Finder&#8217;s toolbar.</p>
+
+<p>Clicking it opens a new Terminal window and changes directory to the location of the selected file/folder. Drag and dropping items on the icon opens one Terminal window per item.</p>
+
+<p>Holding down the ⌘ key opens tabs instead of windows.</p>
+
+<p>Holding down the ⌥ key changes directory in the front-most Terminal window instead of opening a new one. When the frontmost window is busy it opens a new window/tab (depending on the state of the ⌘ key)</p>
+
+<h2 id="todo">Todo</h2>
+
+<ul>
+<li>Find a better way to open a new tab in Leopard&#8217;s Terminal</li>
+<li>Correctly handle the case when both ⌥ and ⌘ are pressed. The code is ready for this but it currently produces a strange behavior. This is probably related to the System Events call. Fixing the point above should therefore fix this one</li>
+<li>Improve AppleScript code (use lists, less for loops, more functions, etc.)</li>
+<li>Remove identical paths when dropping several items on the application, so that only one shell is open per unique path</li>
+<li>Improve the icon so that it can be used at &#8220;Small Size&#8221; (not sure if it&#8217;s possible)</li>
+<li>When this is ran while Terminal is not already running, an additional Terminal is opened. Suppress this.</li>
+</ul>
+
+<h1 id="sourcesandlicense">Sources and License</h1>
+
+<p>(c) 2007 JiHO jo.irisson (at) gmail.com GNU General Public License http://www.gnu.org/copyleft/gpl.html</p>
+
+<p>Actually, code was kind of fetched all-around on the internet, so let us just say that everything is free and that you can do whatever you want with it as long as you continue sharing it. This <strong>really</strong> is for the greater good ;)</p>
+
+<p>Original script and idea by <a href="http://www.entropy.ch/software/applescript/" title="Marc Liyanage - Software - AppleScript">Marc Liyanage</a></p>
+
+<p>Modified by <a href="http://forums.macosxhints.com/showthread.php?p=426240#post426240" title="My leopard update for &quot;Open Terminal Here&quot; toolbar app - The macosxhints Forums">Jonathan Austin</a> to use tabs in Leopard</p>
+
+<p>Key-Down code from a marvelous <a href="http://bbs.applescript.net/viewtopic.php?id=19065" title="MacScripter BBS | Applescript Forums / Customizing Application startup Behavior [Key down on launch]">MacScripts example</a></p>
+
+<p>Icon by Henryk from <a href="http://henrik.nyh.se/2007/10/open-terminal-here-and-glob-select-in-leopard-finder" title="&#034;Open Terminal Here&#034; and lselect (glob select) in Leopard Finder &ndash;  The Pug Automatic">The Pug Automatic</a></p>
+
+<h1 id="historyoftheoriginalscript">History of the original script</h1>
+
+<ul>
+<li>30-OCT-2001: Version 1.0, adapted from one of the example toolbar scripts</li>
+<li>30-OCT-2001: Now handles embedded single quote characters in file names</li>
+<li>30-OCT-2001: Now handles folders on volumes other than the startup volume</li>
+<li>30-OCT-2001: Now handles click on icon in top-level (machine) window</li>
+<li>31-OCT-2001: Now displays a nicer terminal window title, courtesy of Alain Content</li>
+<li>11-NOV-2001: Now folders within application packages (.app directories) and has a new icon</li>
+<li>12-NOV-2001: New properties to set terminal columns and rows as the Terminal does not use default settings</li>
+<li>14-NOV-2001: Major change, now handles 8-bit characters in all shells, and quotes and spaces in tcsh</li>
+<li>18-NOV-2001: Version 1.1: Rewrite, now uses a temporary file ~/.OpenTerminalHere to communicate the directory name between AppleScript and the shell because this is much more reliable for 8-bit characters</li>
+<li>16-JAN-2006: Version 2.0: Rewrite, now uses &#8220;quoted form of&#8221; and &#8220;POSIX Path&#8221;. This gets rid of Perl and temp files, but it no longer handles files instead of folders.</li>
+<li>24-JAN-2007: Version 2.1: Integrated enhancements by Stephan Hradek, can again handle dropped files.</li>
+<li>18-NOV-2007: Leopard Update. Detects busy tab and opens a new one if needed - Jonathan Austin</li>
+<li>10-DEC-2007: New version with Terminal tabs, buzy window detection and use of Keyboard modifiers</li>
+</ul>
+</body>
+</html>

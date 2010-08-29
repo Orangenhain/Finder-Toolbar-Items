@@ -1,0 +1,21 @@
+Blog: Maruru
+Title: Enhanced Open Terminal Here, for Leopard
+Category: software
+Category: tips
+
+
+<a href="http://www.entropy.ch/software/applescript/" title="Marc Liyanage - Software - AppleScript">Open Terminal Here
+</a> is an AppleScript by Marc Liyanage which allows to open a new Terminal window and `<code>cd</code>` to the current Finder location by a mere click. This is delightful for heavy Terminal users. Now that Leopard's Terminal <a href="http://www.apple.com/macosx/technology/unix.html" title="Apple - Mac OS X Leopard - Technology - UNIX">finally has tabs</a> there has been <a href="http://forums.macosxhints.com/showthread.php?p=426240#post426240" title="My leopard update for &quot;Open Terminal Here&quot; toolbar app - The macosxhints Forums">a modification of the original script</a> to take advantage of those when your front-most shell is busy (running <code>top</code> or <code>vi</code>). Better integration with the Finder also showed through <a href="http://henrik.nyh.se/2007/10/open-terminal-here-and-glob-select-in-leopard-finder" title="&#034;Open Terminal Here&#034; and lselect (glob select) in Leopard Finder &ndash;  The Pug Automatic">better icons</a>.
+
+<img src="http://jo.irisson.free.fr/wordpress/wp-content/uploads/screenshot-open-terminal-here.png" alt="screenshot-open terminal here" height="165" width="277">
+
+However I still did not find the ease I had with <a href="http://free.abracode.com/cmworkshop/" title="Contextual Menu Plugins for Mac OS X">OnMyCommand</a> and <a href="http://iterm.sourceforge.net/" title="iTerm">iTerm</a> scripts: with a right click I could open a new window or a new tab, in the current or in the parent directory. Using those scripts in Leopard was less than ideal since the menu of OnMyCommand is buried under the "More" item in the Finder's contextual menu and the scripts had to be rewritten for Apple's Terminal which is more robust than iTerm. So I decided to improve on all the work other already did and modify Open Terminal Here. Using a method wonderfully described by jobu at <a href="http://bbs.applescript.net/viewtopic.php?id=19065" title="MacScripter BBS | Applescript Forums / Customizing Application startup Behavior [Key down on launch]">MacScripter</a> I was able to detect key-down events when at the start of the application and used them to modify the behavior of the script. Now:
+<ul>
+	<li>Clicking the application icon creates a new Terminal at the Finder's location</li>
+	<li>&#x2318; + Clicking opens a new tab in the frontmost Terminal instead of opening a new window</li>
+	<li>&#x2325; + Clicking runs the <code>cd</code> command in the frontmost Terminal window if it is not busy. Other wise it opens a new winddow/tab (depending on the state of &#x2318;)</li>
+</ul>
+
+<div class="alert">You can download the application below and then drag its icon to the Finder's toolbar<br>
+	
+</div>
